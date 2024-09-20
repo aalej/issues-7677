@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "DATASTORE_EMULATOR_HOST=127.0.0.1:8080 node lib/index.js",
+    "start:emulator:old": "gcloud --project=dummy-project-id beta emulators datastore start --use-firestore-in-datastore-mode --host-port=127.0.0.1:8080",
+    "start:emulator:new": "gcloud emulators firestore start --database-mode=datastore-mode --host-port=127.0.0.1:8080"
+  },
+  "devDependencies": {
+    "@google-cloud/datastore": "^9.1.0",
+    "typescript": "^5.4.3"
+  }
+}
